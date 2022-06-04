@@ -3,6 +3,7 @@ import './singl.scss'
 import SidBar from '../../components/sidbar/SidBar'
 import Nav from '../../components/navbar/Nav'
 import Chart from '../../components/chart/Chart'
+import List from '../../components/table/Table'
 function Singl() {
   return (
     <div className='single'>
@@ -46,7 +47,12 @@ function Singl() {
             </div>
 
 
-            <div className='bottom'></div>
+            <div className='bottom'>
+                    <h1 className='title'>
+                        Last Transactions
+                    </h1>
+                <List />
+            </div>
         </div>
     </div>
   )
