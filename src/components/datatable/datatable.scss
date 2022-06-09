@@ -1,7 +1,28 @@
 .datatable{
     height: 600px;
     padding: 20px;
-
+    .dataTitle{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: rgba(88, 88, 88, 0.795);
+        .link{
+            color: rgba(0, 128, 0, 0.803);
+            font-size: 16px;
+            font-weight: 400;
+            transition: 300ms all ease;
+            border: 1px solid green;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            &:hover{
+                font-weight: 900;
+                
+            }
+        }
+    }
     .cellAction{
         display: flex;
         align-items: center;

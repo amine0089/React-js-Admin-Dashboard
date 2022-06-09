@@ -12,12 +12,19 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
+import {Link} from 'react-router-dom'
+
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 function SidBar() {
+  const {dispatch} = useContext(DarkModeContext)
   return (
     <div className='sidbar'>
           <div className="top">
-            <span className='logo'>AmineAdmin</span>
+            <Link to="/" style = {{textDecoration:'none'}}>
+              <span className='logo'>AmineAdmin</span>
+            </Link>
           </div>
           <hr />
           <div className="center">
@@ -28,10 +35,13 @@ function SidBar() {
                     <span>Dashboard</span>
                   </li>
                 <p className="title">LISTS</p>
-                  <li>
-                      <PeopleAltOutlinedIcon className='icon'/>
-                    <span>Users</span>
-                  </li>
+                <Link to="/users" style = {{textDecoration:'none'}}>
+                    <li>
+                        <PeopleAltOutlinedIcon className='icon'/>
+                      <span>Users</span>
+                    </li>
+                  </Link>
+                  
                   <li>
                     <AddBusinessIcon className='icon'/>
                     <span>Products</span>
@@ -77,8 +87,8 @@ function SidBar() {
               </ul>
           </div>
           <div className="bottom">
-              <div className="colorOption"></div>
-              <div className="colorOption"></div>
+              <div className="colorOption" onClick={() => dispatch({type: "LIGHT"})}></div>
+              <div className="colorOption" onClick={() => dispatch({type: "DARK"})}></div>
               
           </div>
     </div>
